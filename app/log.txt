@@ -1,0 +1,6 @@
+Array
+(
+    [chat_id] => 1707044125
+    [text] => Click on inline button.
+    [reply_markup] => {"keyboard":[[{"text":"123"}]],"one_time_keyboard":false,"resize_keyboard":true,"selective":false}
+)

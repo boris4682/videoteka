@@ -1,0 +1,90 @@
+@font-face {
+    font-family: "SegoeUI";
+    src:
+        local("Segoe UI Light"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/light/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/light/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/light/latest.ttf) format("truetype");
+    font-weight: 100;
+  }
+  
+  @font-face {
+    font-family: "SegoeUI";
+    src:
+        local("Segoe UI Semilight"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/semilight/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/semilight/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/semilight/latest.ttf) format("truetype");
+    font-weight: 200;
+  }
+  
+  @font-face {
+    font-family: "SegoeUI";
+    src:
+        local("Segoe UI"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/normal/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/normal/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/normal/latest.ttf) format("truetype");
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: "SegoeUI";
+    src:
+        local("Segoe UI Bold"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/bold/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/bold/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/bold/latest.ttf) format("truetype");
+    font-weight: 600;
+  }
+  
+  @font-face {
+    font-family: "SegoeUI";
+    src:
+        local("Segoe UI Semibold"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/semibold/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/semibold/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/semibold/latest.ttf) format("truetype");
+    font-weight: 700;
+  }
+
+body {
+    font-family: "SegoeUI", sans-serif;
+}
+  
+.btn-main, .btn-primary
+{
+    background: #de5c9d;
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 0;
+    color: #fff;
+}
+
+.btn-main:hover, .btn-primary:hover
+{
+    background: #d63384;
+    color: #fff;
+}
+
+.video-box{
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    border: none;
+    transition: .5s;
+}
+
+.video-box:hover{
+    box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+}
+
+.card-title a{
+    text-decoration: none;
+}
+
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:   flex; 
+}
+  

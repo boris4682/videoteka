@@ -1,0 +1,29 @@
+[20-Apr-2022 14:23:30 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `POST https://api.telegram.org/bot5359159452:AAEZvoxNUlcEs35e7zdZPUhA0bxE3Itm39w/sendMessage` resulted in a `400 Bad Request` response:
+{"ok":false,"error_code":400,"description":"Bad Request: can't parse inline keyboard button: Field \"web_app\" must be o (truncated...)
+ in /app/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /app/vendor/guzzlehttp/guzzle/src/Middleware.php(65): GuzzleHttp\Exception\RequestException::create(Object(GuzzleHttp\Psr7\Request), Object(GuzzleHttp\Psr7\Response))
+#1 /app/vendor/guzzlehttp/promises/src/Promise.php(204): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+#2 /app/vendor/guzzlehttp/promises/src/Promise.php(153): GuzzleHttp\Promise\Promise::callHandler(1, Object(GuzzleHttp\Psr7\Response), NULL)
+#3 /app/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+#4 /app/vendor/guzzlehttp/promises/src/Prom in /app/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[25-Apr-2022 12:13:18 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Formapro\TelegramBot\Update::create() must be of the type array, null given, called in /app/index.php on line 33 and defined in /app/src/Update.php:45
+Stack trace:
+#0 /app/index.php(33): Formapro\TelegramBot\Update::create(NULL)
+#1 {main}
+  thrown in /app/src/Update.php on line 45
+[25-Apr-2022 12:13:48 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Formapro\TelegramBot\Update::create() must be of the type array, null given, called in /app/index.php on line 33 and defined in /app/src/Update.php:45
+Stack trace:
+#0 /app/index.php(33): Formapro\TelegramBot\Update::create(NULL)
+#1 {main}
+  thrown in /app/src/Update.php on line 45
+[27-Apr-2022 12:38:45 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Formapro\TelegramBot\Update::create() must be of the type array, null given, called in /app/index.php on line 33 and defined in /app/src/Update.php:45
+Stack trace:
+#0 /app/index.php(33): Formapro\TelegramBot\Update::create(NULL)
+#1 {main}
+  thrown in /app/src/Update.php on line 45
+[27-Apr-2022 13:38:21 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Formapro\TelegramBot\Update::create() must be of the type array, null given, called in /app/index.php on line 33 and defined in /app/src/Update.php:45
+Stack trace:
+#0 /app/index.php(33): Formapro\TelegramBot\Update::create(NULL)
+#1 {main}
+  thrown in /app/src/Update.php on line 45
