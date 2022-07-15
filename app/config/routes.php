@@ -12,9 +12,11 @@
 //'register/complete/' => 'view-finish-register.php', 'albums/summer/' => 'gallery/summer-photos.php'
 //'user/orders/*/' => 'user/view-user-orders.php', 'blog/comments->' => 'common/blog/comments.php'
 $mvFrontendRoutes = array(
-    // 'index' => 'view-index.php',
-    'form' => '/videos/videos-index.php',
-    'form/*/' => '/videos/videos-index-detail.php',
+    'index' => 'view-index.php',
+    'videos/' => 'videos/videos-index.php',
+    'videos->' => 'videos/videos-index-detail.php',
+    // "index" => "news/view-news.php",
+    // "index/*/" => "news/view-news-details.php",
     'default' => 'view-default.php',
     // 'form/' => 'view-form.php',
     '404' => 'view-404.php',

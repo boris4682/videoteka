@@ -12,20 +12,40 @@ class Video_Elements extends Model
 		['Дата изменения', 'date_time', 'date_update', ['required' => true]],
 		['Активен', 'bool', 'active', ['required' => true]],
 		['Сортировка', 'int', 'sort', ['required' => true]],
-		['Раздел', 'enum', 'section_parent', ["foreign_key" => "Video_Sections", 'required' => true]],
+		['Раздел', 'enum', 'section_parent', ['foreign_key' => 'Video_Sections', 'required' => true]],
 	];
 
-	public function defineNewsPage(Router $router)
+	public function defineVideosPage(Router $router)
 	{
 		$url_parts = $router->getUrlParts();
-		$record = false;
+		$video = false;
 
-		if (count($url_parts) == 2)
-			if (is_numeric($url_parts[1]))
-				$record = $this->findRecord(array("id" => $url_parts[1], "active" => 1));
-			else
-				$record = $this->findRecord(array("url" => $url_parts[1], "active" => 1));
+		if (count($url_parts) == 3){
+			global $mv;
 
-		return $record;
+			$section = $mv->video_sections->findRecord(['code' => $url_parts[1], 'active' => 1]);
+			if($section->getId() > 0){
+				$video = $this->findRecord(['code' => $url_parts[2], 'active' => 1, 'section_parent' => $section->getId()]);
+				$res = ['video' => $video, 'sectionName' => $section->name];
+			}
+			// echo '<pre>';
+			// print_r($video);
+			// echo '</pre>';
+		}
+
+		return $res;
+	}
+
+	public function getVideosByPagination(){
+		global $mv;
+		$videos = $mv->db->getAll(
+			"SELECT video_elements.name, link, video_elements.date_create, video_elements.code as el_code, video_sections.code as sec_code
+				FROM video_elements JOIN video_sections ON section_parent = video_sections.id
+				WHERE video_elements.active = 1
+				ORDER BY video_elements.date_create ASC
+				LIMIT ". $this -> pager -> getParamsForSelect() 
+		);
+
+		return $videos;
 	}
 }
