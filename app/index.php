@@ -9,7 +9,7 @@
 require_once "config/autoload.php";
 
 //Set 1 to see the work time and sql queries
-$debug = new Debug(0); 
+$debug = new Debug(1); 
 
 //Main object of site also contains all modules objects
 $mv = new Builder();
