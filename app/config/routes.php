@@ -15,6 +15,7 @@ $mvFrontendRoutes = array(
     'index' => 'view-index.php',
     'videos/' => 'videos/videos-index.php',
     'videos->' => 'videos/videos-index-detail.php',
+    "login/" => "auth/view-login.php",
     // "index" => "news/view-news.php",
     // "index/*/" => "news/view-news-details.php",
     'default' => 'view-default.php',

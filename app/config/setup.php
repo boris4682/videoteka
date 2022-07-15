@@ -40,7 +40,7 @@ $mvSetupSettings = array(
 'AdminFolder' => 'god-admin',
 
 //If true will start the session the the frontend when any page runs
-'SessionSupport' => false,
+'SessionSupport' => true,
 
 //Set HttpOnly mode for cookies
 'HttpOnlyCookie' => true,
@@ -52,7 +52,7 @@ $mvSetupSettings = array(
 'FilesPath' => 'userfiles',
 
 //Special code for md5 url params, make it new when setup the project
-'SecretCode' => '',
+'SecretCode' => 'dzWphUupHKiYfvjYWD7WrM8cMAsprUwz',
 
 //Sender email address, set it like 'Name <email@domain.zone>'
 'EmailFrom' => '',

@@ -42,7 +42,7 @@ class Video_Elements extends Model
 			"SELECT video_elements.name, link, video_elements.date_create, video_elements.code as el_code, video_sections.code as sec_code
 				FROM video_elements JOIN video_sections ON section_parent = video_sections.id
 				WHERE video_elements.active = 1
-				ORDER BY video_elements.date_create ASC
+				ORDER BY video_elements.section_parent ASC, video_elements.sort ASC 
 				LIMIT ". $this -> pager -> getParamsForSelect() 
 		);
 

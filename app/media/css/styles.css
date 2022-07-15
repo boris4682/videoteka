@@ -6,9 +6,9 @@
         url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/light/latest.woff) format("woff"),
         url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/light/latest.ttf) format("truetype");
     font-weight: 100;
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: "SegoeUI";
     src:
         local("Segoe UI Semilight"),
@@ -16,9 +16,9 @@
         url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/semilight/latest.woff) format("woff"),
         url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/semilight/latest.ttf) format("truetype");
     font-weight: 200;
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: "SegoeUI";
     src:
         local("Segoe UI"),
@@ -26,9 +26,9 @@
         url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/normal/latest.woff) format("woff"),
         url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/normal/latest.ttf) format("truetype");
     font-weight: 400;
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: "SegoeUI";
     src:
         local("Segoe UI Bold"),
@@ -36,9 +36,9 @@
         url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/bold/latest.woff) format("woff"),
         url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/bold/latest.ttf) format("truetype");
     font-weight: 600;
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: "SegoeUI";
     src:
         local("Segoe UI Semibold"),
@@ -46,14 +46,37 @@
         url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/semibold/latest.woff) format("woff"),
         url(//c.s-microsoft.com/static/fonts/segoe-ui/east-european/semibold/latest.ttf) format("truetype");
     font-weight: 700;
-  }
+}
 
 body {
     font-family: "SegoeUI", sans-serif;
 }
-  
-.btn-main, .btn-primary
-{
+
+html, body {
+    margin: 0
+}
+
+#wrap {
+    border: 2px solid #000;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    flex: 0 0 100px;
+}
+
+footer {
+    flex: 0 0 50px;
+}
+
+main {
+    flex: 1 1 auto;
+}
+
+.btn-main, .btn-primary {
     background: #de5c9d;
     border: none;
     padding: 0.8em 1.5em;
@@ -61,23 +84,22 @@ body {
     color: #fff;
 }
 
-.btn-main:hover, .btn-primary:hover
-{
+.btn-main:hover, .btn-primary:hover {
     background: #d63384;
     color: #fff;
 }
 
-.video-box{
+.video-box {
     box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
     border: none;
     transition: .5s;
 }
 
-.video-box:hover{
+.video-box:hover {
     box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
 }
 
-.card-title a{
+.card-title a {
     text-decoration: none;
 }
 
@@ -85,6 +107,5 @@ body {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display:   flex; 
+    display: flex;
 }
-  

@@ -59,6 +59,7 @@ include $mv->views_path . "main-header.php";
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="<?= $mv->root_path; ?>">Главная</a></li>
+        <li class="breadcrumb-item"><a href="/videos/">Видеотека</a></li>
         <li class="breadcrumb-item active" aria-current="page"><?=$res['sectionName']?></li>
     </ol>
 </nav>
@@ -74,7 +75,7 @@ include $mv->views_path . "main-header.php";
             </div>
         </div>
         <?$date = new DateTime($video->date_create);?>
-        <div class="news-detail-date"><?= $date->format('d.m.Y') ?></div>
+        <div class="news-detail-date">Дата создания: <?= $date->format('d.m.Y') ?></div>
     </div>
 </div>
 <script type="text/javascript">
