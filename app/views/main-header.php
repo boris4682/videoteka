@@ -46,13 +46,17 @@
 								<a class="nav-link disabled" href="#">О сервисе</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Выйти</a>
+								<?if(!$account):?>
+									<a class="nav-link" href="/login/">Войти</a>
+								<?else:?>
+									<a class="nav-link" href="/login?action=logout">Выйти</a>
+								<?endif;?>
 							</li>
 						</ul>
-						<form class="d-flex">
+						<!-- <form class="d-flex">
 							<input class="form-control me-2" type="search" placeholder="Поиск по сайту.." aria-label="Search">
 							<button class="btn btn-outline-success" type="submit">Искать</button>
-						</form>
+						</form> -->
 					</div>
 				</div>
 			</nav>

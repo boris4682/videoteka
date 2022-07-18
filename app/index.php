@@ -15,7 +15,12 @@ $debug = new Debug(0);
 //Main object of site also contains all modules objects
 $mv = new Builder();
 include_once $mv->views_path . "/includes/main-index-include.php";
+$url_parts = $mv->router->getUrlParts();
 
+if(!(count($url_parts) == 1 && $url_parts[0] == 'login')){
+    if(!$account)
+        $mv -> redirect('login/');
+}
 //Router refers to include needed view to display the page
 include_once $mv->router->defineRoute();
 

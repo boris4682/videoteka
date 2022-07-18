@@ -23,11 +23,17 @@ $videos = $mv->video_elements->getVideosByPagination();
         color: #a4a4a4;
         padding-left: 5px;
     }
+    div.card-body{
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 </style>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="<?= $mv->root_path; ?>">Главная</a></li>
-        <!-- <li class="breadcrumb-item active" aria-current="page">Library</li> -->
+        <li class="breadcrumb-item active" aria-current="page">Видеотека</li>
     </ol>
 </nav>
 

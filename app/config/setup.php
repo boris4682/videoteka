@@ -28,7 +28,7 @@ $mvSetupSettings = array(
 'TimeZone' => 'GMT',
 
 //Region for localization see folder ~/adminpanel/i18n/
-'Region' => 'en',
+'Region' => 'ru',
 
 //Name of domain of the site must begin with 'http://' (and no '/' at the end!)
 'DomainName' => 'http://localhost',

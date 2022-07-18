@@ -12,7 +12,7 @@ $mvMainSettings = array(
 
 //Supported regional packages for internationalization located at ~adminpanel/i18n/
 //am - american, the same as english (en) exept for date format
-'SupportedRegions' => array('en', 'am', 'ru', 'de'),
+'SupportedRegions' => array(/* 'en', 'am',  */'ru'/* , 'de' */),
 
 //Current version of system (do not change it)
 'Version' => '2.5',
