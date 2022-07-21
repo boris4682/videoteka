@@ -13,7 +13,9 @@
 //'user/orders/*/' => 'user/view-user-orders.php', 'blog/comments->' => 'common/blog/comments.php'
 $mvFrontendRoutes = array(
     'index' => 'view-index.php',
-    'videos/' => 'videos/videos-index.php',
+    // 'videos/' => 'videos/videos-index.php',
+    'videos/' => 'videos/videos-section.php',
+    'videos/*/' => 'videos/videos-section.php',
     'videos->' => 'videos/videos-index-detail.php',
     "login/" => "auth/view-login.php",
     // "index" => "news/view-news.php",

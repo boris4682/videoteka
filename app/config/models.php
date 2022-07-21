@@ -3,5 +3,12 @@
 //The class of the model must be in forlder ~/models.
 //SQL table of model must have the same name as model class in lower case.
 
-$mvActiveModels = array('pages', 'blocks', 'seo', 'video_sections', 'video_elements', 'news', 'accounts');
-?>
+$mvActiveModels = [
+    'pages',
+    'blocks',
+    'seo',
+    'video_sections',
+    'video_elements',
+    'accounts',
+    'groups'
+];

@@ -1,7 +1,7 @@
 <?
 class Pages extends Model
 {
-	protected $name = "Pages menu";
+	protected $name = "Страницы меню";
 	
 	protected $model_elements = array(
 		array("Active", "bool", "active", array("on_create" => true)),

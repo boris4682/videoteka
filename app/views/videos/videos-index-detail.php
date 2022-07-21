@@ -77,6 +77,9 @@ include $mv->views_path . "main-header.php";
         <?$date = new DateTime($video->date_create);?>
         <div class="news-detail-date">Дата создания: <?= $date->format('d.m.Y') ?></div>
     </div>
+    <p>
+        <a href="/videos/<?=$res['sectionCode']?>" class="btn btn-dark"> Вернуться назад</a>
+    </p>
 </div>
 <script type="text/javascript">
     const player = new Plyr('#player', {

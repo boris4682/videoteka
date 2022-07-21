@@ -6,6 +6,7 @@ CREATE TABLE `videohosting`.`video_elements` (
     `date_update` DATETIME NOT NULL,
     `active` BOOLEAN NOT NULL,
     `sort` INT NOT NULL,
+    `thumbnail` VARCHAR(500) NOT NULL,
     `section_parent` INT NOT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`section_parent`)  REFERENCES `videohosting`.`video_sections` (`id`)

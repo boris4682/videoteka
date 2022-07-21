@@ -1,7 +1,7 @@
 <?
 class Seo extends Model_Simple
 {
-	protected $name = "SEO parameters";
+	protected $name = "SEO параметры";
 	
 	protected $model_elements = array(
 		array("Title", "char", "title", array("help_text" => "Default title value for all pages")),

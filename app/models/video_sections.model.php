@@ -4,7 +4,7 @@ class Video_Sections extends Model
 	protected $name = 'Разделы';
 	
 	protected $model_elements = [
-		['Id', 'int', 'id', ['required' => true]],
+		// ['Id', 'int', 'id', ['required' => true]],
 		['Название', 'char', 'name', ['required' => true]],
 		['Код', 'url', 'code',  ['required' => true, 'unique' => true, 'translit_from' => 'name']],
 		['Дата создания', 'date_time', 'date_create', ['required' => true]],
