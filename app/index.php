@@ -7,9 +7,8 @@
 
 //Main config file with all settings and autoloads
 require_once "config/autoload.php";
-// error_reporting(0);
-// ini_set('display_errors', 0);
-phpinfo();
+error_reporting(0);
+ini_set('display_errors', 0);
 //Set 1 to see the work time and sql queries
 $debug = new Debug(0);
 

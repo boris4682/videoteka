@@ -10,5 +10,6 @@ $mvActiveModels = [
     'video_sections',
     'video_elements',
     'accounts',
-    'groups'
+    'groups',
+    'user_groups',
 ];
