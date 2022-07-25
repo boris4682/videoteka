@@ -33,37 +33,39 @@ include $mv->views_path . "main-header.php";
 			<button type="submit" class="btn btn-dark">Загрузить информацию</button>
 		</form>
 		<? if (count($videoHistory) > 0) : ?>
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Видео</th>
-						<th scope="col">Начало просмотра</th>
-						<th scope="col">Последний просмотр</th>
-						<th scope="col">Длительность просмотра в % от видео</th>
-						<th scope="col">Остановился в видео на</th>
-					</tr>
-				</thead>
-				<tbody>
-					<? foreach ($videoHistory as $key => $video) : ?>
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
 						<tr>
-							<th scope="row"><?= $count ?></th>
-							<td><a href="<?= '/videos/' . $video['section_code'] . '/' . $video['code'] ?>/"><?= $video['name'] ?></a></td>
-							<td><?= I18n::formatDate($video['date_create']) ?></td>
-							<td><?= I18n::formatDate($video['date_update']) ?></td>
-							<td><?= $video['viewing_progress'] * 100 ?> %</td>
-							<?
-							$sec = $video['last_time'] % 60;
-							$video['last_time'] = floor($video['last_time'] / 60);
-							$min = $video['last_time'] % 60;
-							$video['last_time'] = floor($video['last_time'] / 60);
-							?>
-							<td><?= $video['last_time'] . ":" . $min . ":" . $sec; ?></td>
+							<th scope="col">#</th>
+							<th scope="col">Видео</th>
+							<th scope="col">Начало просмотра</th>
+							<th scope="col">Последний просмотр</th>
+							<th scope="col">Длительность просмотра в % от видео</th>
+							<th scope="col">Остановился в видео на</th>
 						</tr>
-						<? $count++;	?>
-					<? endforeach; ?>
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						<? foreach ($videoHistory as $key => $video) : ?>
+							<tr>
+								<th scope="row"><?= $count ?></th>
+								<td><a href="<?= '/videos/' . $video['section_code'] . '/' . $video['code'] ?>/"><?= $video['name'] ?></a></td>
+								<td><?= I18n::formatDate($video['date_create']) ?></td>
+								<td><?= I18n::formatDate($video['date_update']) ?></td>
+								<td><?= $video['viewing_progress'] * 100 ?> %</td>
+								<?
+								$sec = $video['last_time'] % 60;
+								$video['last_time'] = floor($video['last_time'] / 60);
+								$min = $video['last_time'] % 60;
+								$video['last_time'] = floor($video['last_time'] / 60);
+								?>
+								<td><?= $video['last_time'] . ":" . $min . ":" . $sec; ?></td>
+							</tr>
+							<? $count++;	?>
+						<? endforeach; ?>
+					</tbody>
+				</table>
+			</div>
 		<? endif; ?>
 	<? endif; ?>
 </div>
