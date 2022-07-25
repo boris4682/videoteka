@@ -25,7 +25,7 @@ $mvSetupSettings = array(
 
  //Project server time zone in format for php like 'Europe/Moscow'
  //List of timezones http://php.net/manual/en/timezones.php
-'TimeZone' => 'GMT',
+'TimeZone' => 'Europe/Moscow',
 
 //Region for localization see folder ~/adminpanel/i18n/
 'Region' => 'ru',

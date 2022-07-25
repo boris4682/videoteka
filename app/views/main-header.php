@@ -46,6 +46,12 @@
 							<li class="nav-item">
 								<a class="nav-link disabled" href="#">О сервисе</a>
 							</li>
+							<?if(in_array($managerGroupId, $userGroups)):?>
+								<li class="nav-item">
+									<a class="nav-link " href="/statistic/">Статистика пользователей</a>
+								</li>
+							<?endif;?>
+
 							<li class="nav-item">
 								<?if(!$account):?>
 									<a class="nav-link" href="/login/">Войти</a>

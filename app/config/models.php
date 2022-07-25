@@ -12,4 +12,6 @@ $mvActiveModels = [
     'accounts',
     'groups',
     'user_groups',
+    'manager_groups',
+    'video_history_viewed',
 ];

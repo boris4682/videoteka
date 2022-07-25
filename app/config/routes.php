@@ -11,16 +11,13 @@
 //Examples: 'contacts/' => 'view-contacts.php', 'articles/*/' => 'view-texts.php', 'products->' => 'shop/view-catalog.php'
 //'register/complete/' => 'view-finish-register.php', 'albums/summer/' => 'gallery/summer-photos.php'
 //'user/orders/*/' => 'user/view-user-orders.php', 'blog/comments->' => 'common/blog/comments.php'
-$mvFrontendRoutes = array(
+$mvFrontendRoutes = [
     'index' => 'view-index.php',
-    // 'videos/' => 'videos/videos-index.php',
+    'statistic/' => 'statistic/index.php',
     'videos/' => 'videos/videos-section.php',
     'videos/*/' => 'videos/videos-section.php',
     'videos->' => 'videos/videos-index-detail.php',
-    "login/" => "auth/view-login.php",
-    // "index" => "news/view-news.php",
-    // "index/*/" => "news/view-news-details.php",
+    'login/' => 'auth/view-login.php',
     'default' => 'view-default.php',
-    // 'form/' => 'view-form.php',
     '404' => 'view-404.php',
-);
+];

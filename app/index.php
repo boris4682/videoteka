@@ -4,7 +4,7 @@
  * Released under the terms of BSD License.
  * http://mv-framework.com
  */
-
+// phpinfo();
 //Main config file with all settings and autoloads
 require_once "config/autoload.php";
 error_reporting(0);

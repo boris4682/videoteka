@@ -6,8 +6,9 @@ $groupsPairs = array_column($groups, 'name', 'id');
 $userGroupsModel = new User_Groups();
 $userGroups = $userGroupsModel->select(['user_id' => $_GET['id']]);
 $activeGroupIds = array_column($userGroups, 'group_id');
+
 // echo '<pre>';
-// print_r($userGroups);
+// print_r($system -> model);
 // echo '</pre>';
 
 ?>

@@ -4,7 +4,6 @@ class Accounts extends Model
     protected $name = 'Аккаунты';
 
     protected $model_elements = [
-
         ['Имя', 'char', 'name', ['required' => true]],
         ['Email', 'email', 'email', ['required' => true, 'unique' => true]],
         ['Пароль', 'password', 'password', [
@@ -62,7 +61,7 @@ class Accounts extends Model
                         $groupUser->date_update = I18n::getCurrentDateTime();
                         $groupUser->create();
                     }
-                    $findGroups = array_diff( $findGroups, [$groupId]);
+                    $findGroups = array_diff($findGroups, [$groupId]);
                 }
                 foreach ($findGroups as $groupIdDelete) {
                     $groupUser = $userGroupsModel->findRecord(['user_id' => $id, 'group_id' => $groupIdDelete]);
@@ -119,6 +118,15 @@ class Accounts extends Model
 
             return $account;
         }
+    }
+
+    public function getUserGroups()
+    {
+        global $account;
+        $userGroupsModel = new User_Groups();
+        $userGroups = $userGroupsModel->select(['user_id' => $account->id]);
+        $activeGroupIds = array_column($userGroups, 'group_id');
+        return $activeGroupIds;
     }
 
     public function checkAuthorization()
