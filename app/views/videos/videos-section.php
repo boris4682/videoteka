@@ -13,7 +13,10 @@ if ($sectionCode) {
     $sectionCode = $section->code;
 }
 $videos = $mv->video_elements->getVideosSectionByPagination($sectionCode);
-
+$viewedVideos = $mv->video_elements->getViewedVideos();
+// echo '<pre>';
+// print_r($viewedVideos);
+// echo '</pre>';
 $total_active = count($videos);
 //Определение текущей страницы
 $current_page = $mv->router->defineCurrentPage('page');
@@ -84,7 +87,7 @@ $videos = $mv->video_elements->getVideosSectionByPagination($sectionCode);
                                 <div class="news-list-more mt-4">
                                     <a class="btn btn-main btn-sm" href="<? echo '/videos/' . $video["sec_code"] . '/' . $video["el_code"] . '/' ?>">Подробнее</a>
                                 </div>
-                                <? if ($video['is_viewed']) : ?>
+                                <? if (in_array($video['id'], $viewedVideos)) : ?>
                                     <i class="fas fa-eye fa-2x mt-3 show-video" data-toggle="tooltip" data-placement="left" title="Просмотрено"></i>
                                 <? endif; ?>
                             </div>

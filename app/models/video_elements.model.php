@@ -52,19 +52,32 @@ class Video_Elements extends Model
 
 	public function getVideosSectionByPagination($sectionCode){
 		global $mv, $account;
-		$query = "SELECT video_elements.name, link, video_elements.date_create, video_elements.thumbnail,
-			video_elements.code as el_code, video_sections.code as sec_code, is_viewed
+		$query = "SELECT video_elements.id, video_elements.name, link, video_elements.date_create, video_elements.thumbnail,
+			video_elements.code as el_code, video_sections.code as sec_code
 			FROM video_elements JOIN video_sections ON section_parent = video_sections.id
-			LEFT JOIN video_history_viewed ON video_elements.id = video_history_viewed.video_id
-			WHERE video_elements.active = 1 AND video_sections.code = '$sectionCode' AND (video_history_viewed.user_id = $account->id OR video_history_viewed.user_id IS NULL)
+			
+			WHERE video_elements.active = 1 AND video_sections.code = '$sectionCode' 
 			ORDER BY video_elements.section_parent ASC, video_elements.sort ASC";
 		if($this -> pager){
 			$query .= " LIMIT ". $this -> pager -> getParamsForSelect();
 		}
 		$videos = $mv->db->getAll($query);
+		/*
+		, is_viewed
+LEFT JOIN video_history_viewed ON video_elements.id = video_history_viewed.video_id
+AND (video_history_viewed.user_id = $account->id OR video_history_viewed.user_id IS NULL)
+		*/
 		// echo '<pre>';
 		// print_r($videos);
 		// echo '</pre>';
 		return $videos;
+	}
+
+	public function getViewedVideos()
+	{
+		global $account;
+		$videoHistoryViewed = new Video_History_Viewed();
+		$findVideos = $videoHistoryViewed->select(['user_id' => $account->id, 'is_viewed' => 1]);
+		return array_column($findVideos, 'video_id');
 	}
 }

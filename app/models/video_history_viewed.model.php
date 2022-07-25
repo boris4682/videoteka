@@ -34,4 +34,17 @@ class Video_History_Viewed extends Model
 		
 		return !empty(array_intersect($userGroups, $salonGroups));
 	}
+
+	public function getHistory($userId)
+	{
+		$query = "SELECT video_history_viewed.*, video_elements.name,  video_elements.code, video_sections.code as section_code   FROM video_history_viewed 
+		JOIN video_elements ON video_history_viewed.video_id = video_elements.id
+		JOIN video_sections ON video_elements.section_parent = video_sections.id
+		WHERE video_history_viewed.user_id = $userId";
+
+		$historyInfo = $this->db->getAll($query);
+		return $historyInfo;
+
+	}
+
 }
