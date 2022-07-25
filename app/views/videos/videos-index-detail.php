@@ -22,6 +22,20 @@ include $mv->views_path . "main-header.php";
         font-size: 18px;
     }
 
+    .showed {
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.25rem;
+        color: #fff;
+        background-color: #00c55d;
+    }
+
     .news-detail .card-title a:hover {
         border-bottom-color: transparent;
         text-decoration: none;
@@ -73,7 +87,12 @@ include $mv->views_path . "main-header.php";
         </div>
 
         <div class="news-detail-body">
-            <h3 class="news-detail-title mt-4"><?= $video->name ?></h3>
+            <h3 class="news-detail-title mt-4">
+                <?= $video->name ?>
+                <? if ($isViewed) : ?>
+                    <span class="showed">Просмотрено</span>
+                <? endif; ?>
+            </h3>
             <div class="news-detail-content">
             </div>
         </div>
@@ -101,7 +120,9 @@ include $mv->views_path . "main-header.php";
         },
         disableContextMenu: true,
         ratio: '16:9',
-        youtube: { start: <?=$lastTime?> },
+        youtube: {
+            start: <?= $lastTime ?>
+        },
         // quality: { default: 1080, options: [4320, 2880, 2160, 1440, 1080, 720, 576, 480, 360, 240] }
     });
 

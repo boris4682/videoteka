@@ -6,7 +6,7 @@ $mv->seo->mergeParams($content, "name");
 include $mv->views_path . "main-header.php";
 
 $sectionCode = $mv->router->getUrlPart(1);
-if($sectionCode){
+if ($sectionCode) {
     $section = $mv->video_sections->findRecord(['code' => $sectionCode, 'active' => 1]);
 } else {
     $section = $mv->video_sections->findRecord(['active' => 1]);
@@ -31,13 +31,18 @@ $videos = $mv->video_elements->getVideosSectionByPagination($sectionCode);
         padding-left: 5px;
     }
 
+    .show-video {
+        color: #00c55d;
+    }
+
     div.card-body {
         min-height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
-    .thumb{
+
+    .thumb {
         width: -webkit-fill-available;
     }
 </style>
@@ -51,7 +56,7 @@ $videos = $mv->video_elements->getVideosSectionByPagination($sectionCode);
 
 <div class="row news-list">
     <div class="col-lg-2 col-sm-10 mb-3">
-        <?require_once($mv->views_path . '/includes/sections-menu.php')?>
+        <? require_once($mv->views_path . '/includes/sections-menu.php') ?>
     </div>
 
     <div class="col-lg-10 col-sm-12">
@@ -64,10 +69,9 @@ $videos = $mv->video_elements->getVideosSectionByPagination($sectionCode);
                                 <?= $video['name'] ?>
                             </h5>
                             <div class="plyr__video-embed js-player">
-                                <a href="<? echo '/videos/'.$video["sec_code"] . '/' . $video["el_code"] . '/' ?>">
-                                    <img src="/<?=$video['thumbnail']?>" alt="<?=$video['name']?>" class="thumb">
+                                <a href="<? echo '/videos/' . $video["sec_code"] . '/' . $video["el_code"] . '/' ?>">
+                                    <img src="/<?= $video['thumbnail'] ?>" alt="<?= $video['name'] ?>" class="thumb">
                                 </a>
-                                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $video['link'] ?>?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                             </div>
                             <? $date = new DateTime($video['date_create']); ?>
                             <div class="d-flex justify-content-between">
@@ -80,6 +84,9 @@ $videos = $mv->video_elements->getVideosSectionByPagination($sectionCode);
                                 <div class="news-list-more mt-4">
                                     <a class="btn btn-main btn-sm" href="<? echo '/videos/' . $video["sec_code"] . '/' . $video["el_code"] . '/' ?>">Подробнее</a>
                                 </div>
+                                <? if ($video['is_viewed']) : ?>
+                                    <i class="fas fa-eye fa-2x mt-3 show-video" data-toggle="tooltip" data-placement="left" title="Просмотрено"></i>
+                                <? endif; ?>
                             </div>
                         </div>
                     </div>

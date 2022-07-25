@@ -51,16 +51,20 @@ class Video_Elements extends Model
 	}
 
 	public function getVideosSectionByPagination($sectionCode){
-		global $mv;
-		$query = "SELECT video_elements.name, link, video_elements.date_create, video_elements.thumbnail,  video_elements.code as el_code, video_sections.code as sec_code
+		global $mv, $account;
+		$query = "SELECT video_elements.name, link, video_elements.date_create, video_elements.thumbnail,
+			video_elements.code as el_code, video_sections.code as sec_code, is_viewed
 			FROM video_elements JOIN video_sections ON section_parent = video_sections.id
-			WHERE video_elements.active = 1 AND video_sections.code = '$sectionCode'
+			LEFT JOIN video_history_viewed ON video_elements.id = video_history_viewed.video_id
+			WHERE video_elements.active = 1 AND video_sections.code = '$sectionCode' AND (video_history_viewed.user_id = $account->id OR video_history_viewed.user_id IS NULL)
 			ORDER BY video_elements.section_parent ASC, video_elements.sort ASC";
 		if($this -> pager){
 			$query .= " LIMIT ". $this -> pager -> getParamsForSelect();
 		}
 		$videos = $mv->db->getAll($query);
-
+		// echo '<pre>';
+		// print_r($videos);
+		// echo '</pre>';
 		return $videos;
 	}
 }
