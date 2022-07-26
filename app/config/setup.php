@@ -12,7 +12,7 @@ $mvSetupSettings = array(
 
 //Set 'production' - log all errors into /log/ folder, 
 //'development' - display all possible errors on the screen
-'Mode' => 'development',
+'Mode' => 'production',
 
 //Database parameters
 'DbEngine' => 'mysql', // mysql / sqlite

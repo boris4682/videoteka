@@ -2,10 +2,10 @@
 # Имя файла .gitignore
 # Файл нужно создать самостоятельно
 /database
-/app/core
-/app/god-admin
+# /app/core
+# /app/god-admin
 /app/log
-/app/core
+# /app/core
 
 # Игнорируются все файлы с расширением sqlite3 в директории db,
 # но не игнорируются такие же файлы внутри любого вложенного каталога в db
